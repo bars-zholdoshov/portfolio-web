@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home - Barsbek</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial;
+        margin: 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 10px 20px;
+        border: 2px solid #ccc;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: gray;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        color: black;
+      }
+
+      .nav-links a.active {
+        color: black;
+        border-bottom: 3px solid red;
+      }
+
+      .profile {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="nav-links">
+        <a class="active" href="home_page.html">Home</a>
+        <a href="about_me_page.html">About me</a>
+        <a href="contact_page.html">Contact</a>
+        <a href="resume_page.html">Resume</a>
+      </div>
+
+      <img class="profile" src="https://via.placeholder.com/40" alt="Profile" />
+    </div>
+  </body>
+</html>
