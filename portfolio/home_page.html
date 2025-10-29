@@ -3,61 +3,214 @@
   <head>
     <title>Home - Barsbek</title>
     <style>
-      body {
-        background-color: #f2f2f2;
-        font-family: Arial;
+      :root {
+        --bg: #fffefe;
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --accent: #2563eb;
+        --accent-2: #1d4ed8;
+        --card: #f5faff;
+      }
+      * {
+        box-sizing: border-box;
         margin: 0;
+        padding: 0;
       }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        padding: 10px 20px;
-        border: 2px solid #ccc;
+      body {
+        font: 16px/1.6 system-ui, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg);
       }
-
-      .nav-links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-links a {
-        color: gray;
+      a {
         text-decoration: none;
-        font-weight: bold;
+        color: inherit;
       }
-
-      .nav-links a:hover {
-        color: black;
+      .container {
+        width: min(1100px, 92%);
+        margin-inline: auto;
       }
-
-      .nav-links a.active {
-        color: black;
-        border-bottom: 3px solid red;
+      /* Header / Nav (CSS-only mobile menu using checkbox) */
+      header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        z-index: 10;
       }
-
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        gap: 16px;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 20px;
+      }
       .profile {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        border: 2px solid #ccc;
+        border: 2px solid var(--border);
         object-fit: cover;
+      }
+      .nav-toggle {
+        display: none;
+      }
+      .menu-btn {
+        display: none;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 20px;
+        background: #fff;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+      }
+      .nav-links a {
+        display: inline-block;
+        padding-bottom: 4px;
+        color: var(--muted);
+        font-weight: 600;
+        border-bottom: 3px solid transparent;
+        transition: 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .nav-links a.active {
+        color: var(--text);
+        border-bottom-color: var(--accent);
+      }
+      @media (max-width: 720px) {
+        .menu-btn {
+          display: inline-block;
+        }
+        .nav-links {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 60px;
+          background: #fff;
+          border-top: 1px solid var(--border);
+          padding: 16px;
+          flex-direction: column;
+          gap: 0;
+          display: none;
+        }
+        .nav-toggle:checked ~ .nav-links {
+          display: flex;
+        }
+      }
+      main {
+        padding: 48px 16px;
+      }
+      h1 {
+        font-size: clamp(32px, 2.5vw + 21px, 48px);
+        margin: 0 0 12px;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 60ch;
+      }
+      .cta {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 10px 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        font-weight: 700;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .btn-primary:hover {
+        background: var(--accent-2);
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 48px 0;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid #e6f2ff;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+      }
+      footer {
+        text-align: center;
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+        color: var(--muted);
+        font-size: 15px;
       }
     </style>
   </head>
-
   <body>
-    <div class="navbar">
-      <div class="nav-links">
-        <a class="active" href="home_page.html">Home</a>
-        <a href="about_me_page.html">About me</a>
-        <a href="contact_page.html">Contact</a>
-        <a href="resume_page.html">Resume</a>
+    <header>
+      <div class="container">
+        <nav>
+          <a class="brand" href="home_page.html">BZ</a>
+          <label class="menu-btn" for="nav-toggle" aria-label="Open menu"
+            >☰</label
+          >
+          <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+          <ul class="nav-links">
+            <li><a class="active" href="home_page.html">Home</a></li>
+            <li><a href="about_me_page.html">About me</a></li>
+            <li><a href="resume_page.html">Resume</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+          </ul>
+          <img
+            class="profile"
+            src="https://via.placeholder.com/48"
+            alt="Barsbek Zholdoshov"
+          />
+        </nav>
       </div>
+    </header>
 
-      <img class="profile" src="https://via.placeholder.com/40" alt="Profile" />
-    </div>
+    <main class="container">
+      <section>
+        <h1>Hey, I’m Barsbek Zholdoshov</h1>
+        <p class="lead">text</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="resume_page.html">View Resume</a>
+          <a class="btn" href="contact_page.html">Contact me</a>
+        </div>
+      </section>
+
+      <section class="card-grid">
+        <div class="card">
+          <h2>What I do</h2>
+          <p>text</p>
+        </div>
+        <div class="card">
+          <h2>Tech I love</h2>
+          <p>text</p>
+        </div>
+        <div class="card">
+          <h2>Recent focus</h2>
+          <p>text</p>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>&copy; 2025 Barsbek Zholdoshov. All rights reserved.</p></footer>
   </body>
 </html>

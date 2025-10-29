@@ -1,84 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>About Me - Barsbek</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Barsbek</title>
     <style>
-      body {
-        background-color: #f2f2f2;
-        font-family: Arial;
+      :root {
+        --bg: #fffefe;
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --accent: #2563eb;
+        --card: #f5faff;
+      }
+      * {
+        box-sizing: border-box;
         margin: 0;
+        padding: 0;
       }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        padding: 10px 20px;
-        border-bottom: 2px solid #ccc;
+      body {
+        font: 16px/1.6 system-ui, Segoe UI, Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
       }
-
-      .nav-links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-links a {
-        color: gray;
+      a {
         text-decoration: none;
-        font-weight: bold;
+        color: inherit;
       }
-
-      .nav-links a:hover {
-        color: black;
+      .container {
+        width: min(1100px, 92%);
+        margin: auto;
       }
-
-      .nav-links a.active {
-        color: black;
-        border-bottom: 3px solid red;
+      header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        z-index: 10;
       }
-
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        gap: 16px;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 20px;
+      }
       .profile {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        border: 2px solid #ccc;
+        border: 2px solid var(--border);
         object-fit: cover;
       }
-
-      h1 {
-        text-align: center;
-        margin-top: 40px;
+      .nav-toggle {
+        display: none;
       }
-
-      .information-box {
-        background-color: white;
-        border: 2px solid #ccc;
+      .menu-btn {
+        display: none;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        padding: 6px 10px;
         border-radius: 10px;
-        width: 80%;
-        margin: 30px auto;
-        padding: 50px;
+        font-size: 20px;
+        background: #fff;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+      }
+      .nav-links a {
+        display: inline-block;
+        padding-bottom: 4px;
+        color: var(--muted);
+        font-weight: 600;
+        border-bottom: 3px solid transparent;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .nav-links a.active {
+        color: var(--text);
+        border-bottom-color: var(--accent);
+      }
+      @media (max-width: 720px) {
+        .menu-btn {
+          display: inline-block;
+        }
+        .nav-links {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 60px;
+          background: #fff;
+          border-top: 1px solid var(--border);
+          padding: 16px;
+          flex-direction: column;
+          gap: 0;
+          display: none;
+        }
+        .nav-toggle:checked ~ .nav-links {
+          display: flex;
+        }
+      }
+      main {
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      .pill {
+        display: inline-block;
+        background: var(--card);
+        border: 1px solid #e6f2ff;
+        border-radius: 999px;
+        padding: 6px 12px;
+        margin: 4px 6px 0 0;
+      }
+      footer {
         text-align: center;
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+        color: var(--muted);
+        font-size: 15px;
       }
     </style>
   </head>
-
   <body>
-    <div class="navbar">
-      <div class="nav-links">
-        <a href="home_page.html">Home</a>
-        <a class="active" href="about_me_page.html">About me</a>
-        <a href="contact_page.html">Contact</a>
-        <a href="resume_page.html">Resume</a>
+    <header>
+      <div class="container">
+        <nav>
+          <a class="brand" href="home_page.html">BZ</a>
+          <label class="menu-btn" for="nav-toggle">☰</label>
+          <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+          <ul class="nav-links">
+            <li><a href="home_page.html">Home</a></li>
+            <li><a class="active" href="about_me_page.html">About me</a></li>
+            <li><a href="resume_page.html">Resume</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+          </ul>
+          <img class="profile" src="#" alt="Barsbek Zholdoshov" />
+        </nav>
       </div>
+    </header>
 
-      <img class="profile" src="https://via.placeholder.com/40" alt="Profile" />
-    </div>
+    <main class="container">
+      <h1>About me</h1>
+      <p>text</p>
+      <h2 style="margin-top: 24px">Skills</h2>
+      <p>
+        <span class="pill">HTML</span>
+      </p>
+      <h2 style="margin-top: 24px">Principles</h2>
+      <ol style="padding-left: 20px; margin-top: 6px">
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+      </ol>
+    </main>
 
-    <h1>Hey, I'm Barsbek</h1>
-
-    <div class="information-box">
-      <p>Information Section</p>
-    </div>
+    <footer><p>&copy; 2024 Barsbek Zholdoshov</p></footer>
   </body>
 </html>
