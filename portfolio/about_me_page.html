@@ -84,8 +84,8 @@
         color: var(--text);
       }
       .nav-links a.active {
-        color: var(--text);
-        border-bottom-color: var(--accent);
+        color: var(--accent);
+        border-bottom-color: transparent;
       }
       @media (max-width: 720px) {
         .menu-btn {
@@ -144,23 +144,43 @@
             <li><a href="resume_page.html">Resume</a></li>
             <li><a href="contact_page.html">Contact</a></li>
           </ul>
-          <img class="profile" src="#" alt="Barsbek Zholdoshov" />
+          <img
+            class="profile"
+            src="../images/barsbek.jpg"
+            alt="Barsbek Zholdoshov"
+          />
         </nav>
       </div>
     </header>
 
     <main class="container">
       <h1>About me</h1>
-      <p>text</p>
+      <p>
+        I’m a UI/UX designer currently working at
+        <a href="https://novordo.com/" target="_blank" rel="noopener">Novordo</a
+        >. I combine visual design with user-centered research to create
+        interfaces that are both beautiful and usable. In 2022–2023 I taught
+        graphic design to students in 7th–9th grade, which strengthened my
+        ability to explain design concepts clearly and mentor others.
+      </p>
       <h2 style="margin-top: 24px">Skills</h2>
       <p>
         <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">Figma</span>
+        <span class="pill">UX Research</span>
+        <span class="pill">Prototyping</span>
+        <span class="pill">Accessibility</span>
+        <span class="pill">Design Systems</span>
       </p>
       <h2 style="margin-top: 24px">Principles</h2>
       <ol style="padding-left: 20px; margin-top: 6px">
-        <li>list 1</li>
-        <li>list 2</li>
-        <li>list 3</li>
+        <li>Clarity — prefer simple, understandable solutions.</li>
+        <li>
+          Accessibility — design for everyone using semantic markup and
+          inclusive patterns.
+        </li>
+        <li>Iteration — ship early, learn, and improve continuously.</li>
       </ol>
     </main>
 

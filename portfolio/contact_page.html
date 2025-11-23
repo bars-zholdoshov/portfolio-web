@@ -79,8 +79,8 @@
         color: #111827;
       }
       .nav-links a.active {
-        color: #111827;
-        border-bottom-color: var(--accent);
+        color: var(--accent);
+        border-bottom-color: transparent;
       }
       @media (max-width: 720px) {
         .menu-btn {
@@ -161,7 +161,7 @@
           </ul>
           <img
             class="profile"
-            src="https://via.placeholder.com/48"
+            src="../images/barsbek.jpg"
             alt="Barsbek Zholdoshov"
           />
         </nav>
@@ -170,7 +170,12 @@
 
     <main class="container">
       <h1>Contact</h1>
-      <p>Have a project or question? Send a message:</p>
+      <p>
+        Have a project or question? Send a message below or email me at
+        <a href="mailto:your-email@example.com">your-email@example.com</a>.
+        Connect on <a href="https://github.com/your-username">GitHub</a> or
+        <a href="https://linkedin.com/in/your-profile">LinkedIn</a>.
+      </p>
       <form method="post">
         <label for="name">Name<input id="name" name="name" required /></label>
         <label for="email"
