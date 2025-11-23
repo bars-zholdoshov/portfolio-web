@@ -17,10 +17,16 @@
         margin: 0;
         padding: 0;
       }
+      html {
+        height: 100%;
+      }
       body {
         font: 16px/1.6 system-ui, Segoe UI, Roboto, Arial, sans-serif;
         background: var(--bg);
         color: var(--text);
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
       }
       a {
         text-decoration: none;
@@ -104,6 +110,7 @@
       }
       main {
         padding: 40px 16px;
+        flex: 1;
       }
       h1 {
         font-size: 32px;
@@ -172,9 +179,10 @@
       <h1>Contact</h1>
       <p>
         Have a project or question? Send a message below or email me at
-        <a href="mailto:your-email@example.com">your-email@example.com</a>.
-        Connect on <a href="https://github.com/your-username">GitHub</a> or
-        <a href="https://linkedin.com/in/your-profile">LinkedIn</a>.
+        <a href="mailto:zholdoshov.barsbek@gmail.com"
+          >zholdoshov.barsbek@gmail.com</a
+        >. Connect on <a href="https://github.com/bars-zholdoshov">GitHub</a> or
+        <a href="https://linkedin.com/in/bars-zholdoshov">LinkedIn</a>.
       </p>
       <form method="post">
         <label for="name">Name<input id="name" name="name" required /></label>
