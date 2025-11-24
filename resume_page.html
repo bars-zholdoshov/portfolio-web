@@ -24,7 +24,7 @@
         font: 16px/1.6 system-ui, Segoe UI, Roboto, Arial, sans-serif;
         background: var(--bg);
         color: var(--text);
-        min-height: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
       }
@@ -109,11 +109,11 @@
         }
       }
       main {
-        padding: 40px 16px;
+        padding: clamp(32px, 5vw, 48px) 16px;
         flex: 1;
       }
       h1 {
-        font-size: 35px;
+        font-size: clamp(28px, 4vw, 36px);
         margin-bottom: 16px;
       }
       .timeline {
@@ -135,6 +135,33 @@
         border-top: 1px solid var(--border);
         padding: 32px 0;
         color: var(--muted);
+        font-size: 15px;
+      }
+      @media (max-width: 600px) {
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .brand {
+          width: 100%;
+          text-align: center;
+          display: block;
+        }
+        .profile {
+          width: 40px;
+          height: 40px;
+        }
+        .timeline {
+          border-left: none;
+          padding-left: 0;
+        }
+        main {
+          padding-inline: 12px;
+        }
+        footer {
+          padding: 24px 0;
+          font-size: 14px;
+        }
       }
       @media print {
         header,
@@ -226,6 +253,6 @@
       </section>
     </main>
 
-    <footer><p>&copy; 2025 Barsbek Zholdoshov</p></footer>
+    <footer><p>&copy; 2025 Barsbek Zholdoshov. All rights reserved.</p></footer>
   </body>
 </html>
